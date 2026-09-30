@@ -1,0 +1,301 @@
+:root {
+  --popup-width: 500px;
+  --popup-height: 420px;
+  --base-font-size: 14px;
+  --bg-gradient-start: #1a1a1a;
+  --bg-gradient-end: #2d2d2d;
+  --card-bg: #2d2d2d;
+  --muted: #888888;
+  --text-color: #ffffff;
+  --border-color: #404040;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  width: var(--popup-width);
+  height: var(--popup-height);
+  overflow: visible;
+}
+
+body {
+  width: var(--popup-width);
+  height: var(--popup-height);
+  min-width: var(--popup-width);
+  min-height: var(--popup-height);
+  overflow-y: auto;
+  overflow-x: hidden;
+  font-family: 'IBM Plex Sans', forte, 'Segoe UI', Roboto, Oxygen, Cantarell, sans-serif;
+  background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+  color: var(--text-color);
+  font-size: var(--base-font-size);
+}
+
+.container {
+  padding: 20px;
+  background: transparent;
+  width: 100%;
+  min-height: 100%;
+  position: relative;
+}
+
+#mainView {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 20px;
+  color: var(--text-color);
+  text-align: center;
+  font-weight: 600;
+}
+
+.paste-html-btn {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #667eea;
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.update-html-btn {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 10px;
+  background: #764ba2;
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.update-html-btn:hover {
+  background: #633e88;
+}
+
+.paste-html-btn:hover {
+  background: #586fd1;
+}
+
+.settings-btn {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 18px;
+  color: var(--text-color);
+  cursor: pointer;
+}
+
+.settings-panel {
+  background: rgba(0,0,0,0.4);
+  border: 1px solid var(--border-color);
+  padding: 16px;
+  border-radius: 10px;
+}
+
+#mainView[hidden],
+.settings-panel[hidden] {
+  display: none !important;
+}
+
+.settings-panel h2 {
+  margin-bottom: 12px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.setting-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.small-btn {
+  padding: 6px 10px;
+  background: #667eea;
+  color: var(--text-color);
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.size-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.setting-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 12px;
+}
+
+.bookmark-form {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.bookmark-form label {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.bookmark-form input,
+.bookmark-edit-input,
+.bookmark-form select {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid var(--border-color);
+  border-radius: 8px;
+  font-size: 1rem;
+  background: var(--card-bg);
+  color: var(--text-color);
+  transition: border-color 0.3s;
+}
+
+.bookmark-form input:focus,
+.bookmark-edit-input:focus {
+  outline: none;
+  border-color: #667eea;
+}
+
+.bookmark-form input::placeholder,
+.bookmark-edit-input::placeholder {
+  color: var(--muted);
+}
+
+.url-row {
+  display: flex;
+  gap: 8px;
+}
+
+.location-row {
+  display: flex;
+  gap: 8px;
+}
+
+.location-row > div {
+  flex: 1;
+}
+
+.location-row label {
+  display: block;
+  margin-top: 4px;
+}
+
+.bookmark-form select {
+  margin-top: 2px;
+}
+
+.add-btn {
+  padding: 10px 18px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: var(--text-color);
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.add-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.add-btn:active {
+  transform: translateY(0);
+}
+
+.section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.section-heading h2 {
+  font-size: 18px;
+}
+
+.status-message {
+  min-height: 20px;
+  margin-bottom: 8px;
+  color: #8bd5a5;
+  font-size: 0.9rem;
+}
+
+.status-message.error {
+  color: #ff8c8c;
+}
+
+.bookmarks-section {
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
+  flex: 1;
+}
+
+.bookmark-list {
+  list-style: none;
+  overflow: auto;
+  min-height: 0;
+}
+
+.bookmark-item {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 10px;
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.bookmark-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.delete-btn {
+  padding: 6px 10px;
+  background: #ff6b6b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: background 0.2s;
+}
+
+.delete-btn:hover {
+  background: #ff5252;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 40px 20px;
+  color: var(--muted);
+  font-size: 14px;
+}

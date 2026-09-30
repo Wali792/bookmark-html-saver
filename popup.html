@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookmark Saver</title>
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <!-- Popup root container holds both the main interface and the settings panel. -->
+  <div class="container">
+    <!-- Settings button toggles the settings panel and hides the main UI. -->
+    <button id="settingsBtn" class="settings-btn" title="Settings">⚙️</button>
+
+    <div id="mainView">
+      <h1>Bookmark Saver</h1>
+      <button id="pasteHtml" class="paste-html-btn" type="button">Paste HTML</button>
+      <button id="updateLastHtml" class="update-html-btn" type="button">Update Last HTML: None</button>
+
+      <form id="bookmarkForm" class="bookmark-form">
+        <label for="bookmarkTitle">Title</label>
+        <input id="bookmarkTitle" type="text" placeholder="Bookmark title" autocomplete="off" required>
+
+        <label for="bookmarkUrl">URL</label>
+        <div class="url-row">
+          <input id="bookmarkUrl" type="text" placeholder="https://example.com" autocomplete="url" required>
+          <button class="add-btn" type="submit">Add</button>
+        </div>
+
+        <div class="location-row">
+          <div>
+            <label for="bookmarkFolder">Bookmark Bar folder</label>
+            <select id="bookmarkFolder"></select>
+          </div>
+          <div>
+            <label for="bookmarkPosition">Position</label>
+            <select id="bookmarkPosition">
+              <option value="beginning">Beginning</option>
+              <option value="end" selected>End</option>
+            </select>
+          </div>
+        </div>
+      </form>
+
+      <div id="statusMessage" class="status-message" role="status" aria-live="polite"></div>
+
+      <section class="bookmarks-section" aria-labelledby="bookmarksHeading">
+        <div class="section-heading">
+          <h2 id="bookmarksHeading">Bookmarks</h2>
+          <button id="refreshBookmarks" class="small-btn" type="button">Refresh</button>
+        </div>
+        <ul id="bookmarkList" class="bookmark-list"></ul>
+        <p id="emptyState" class="empty-state" hidden>No bookmarks found.</p>
+      </section>
+    </div>
+
+    <!-- Settings panel is hidden by default and displays customization controls only. -->
+    <div id="settingsPanel" class="settings-panel" hidden>
+      <h2>Settings</h2>
+
+      <div class="setting-row">
+        <label>Theme:</label>
+        <button id="themeToggle" class="small-btn">Toggle Dark/Light</button>
+      </div>
+
+      <div class="setting-row">
+        <label>Horizontal Size:</label>
+        <div class="size-controls">
+          <button id="decreaseWidth" class="small-btn">-</button>
+          <span id="widthValue">Default</span>
+          <button id="increaseWidth" class="small-btn">+</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <label>Vertical Size:</label>
+        <div class="size-controls">
+          <button id="decreaseHeight" class="small-btn">-</button>
+          <span id="heightValue">Default</span>
+          <button id="increaseHeight" class="small-btn">+</button>
+        </div>
+      </div>
+
+      <div class="setting-row">
+        <label>Text Size:</label>
+        <div class="size-controls">
+          <button id="decreaseText" class="small-btn">A-</button>
+          <span id="textValue">Default</span>
+          <button id="increaseText" class="small-btn">A+</button>
+        </div>
+      </div>
+
+      <div class="setting-actions">
+        <button id="resetSettings" class="small-btn">Reset</button>
+        <button id="closeSettings" class="small-btn">Back</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

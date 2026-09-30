@@ -1,0 +1,12 @@
+{
+  "manifest_version": 3,
+  "name": "Bookmark Saver",
+  "version": "1.0",
+  "description": "Manage Chrome bookmarks and save or update page HTML snapshots from a popup.",
+  "permissions": ["storage", "bookmarks", "activeTab", "scripting", "debugger", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Bookmark Saver"
+  }
+}
