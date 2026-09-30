@@ -133,6 +133,8 @@ This extension is designed for Google Chrome. It has only been tested on Windows
 
 > **WARNING: Changes are not saved automatically.** To save your edits, keep the document tab active, open Bookmark Saver, and click **Update Last HTML**. Wait for the success message before closing the tab or navigating away. Any edits not saved this way may be lost.
 
+> **Formatting warning:** When you copy and paste text into the HTML document, formatting from the source may be retained. To remove the source formatting while pasting, use **Ctrl+Shift+V**. You can also remove formatting later in Developer Tools, opened with **F12** or **Ctrl+Shift+I** on Windows.
+
 ```text
 data:text/html, <html style="forced-color-adjust: none;"><head><meta charset="UTF-8"><title>Untitled</title><style>*{text-align: center; color: white; background-color: black; font-family: IBM Plex Sans; font-size: 67px; font-weight: 670;} [contenteditable="true"]:focus {outline: none;}</style></head><body><div autofocus="true" contenteditable="true"></div></body></html>
 ```
