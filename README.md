@@ -1,6 +1,6 @@
 # Bookmark Saver
 
-A Manifest V3 Chrome extension for managing bookmarks from a popup and saving a page's HTML as a bookmark URL.
+A Manifest V3 Chrome extension for managing bookmarks from a popup and saving a page's HTML as a bookmark URL. Recommended for those who want a highly customizable HTML document editing experience. Knowledge of basic html or JavaScript or CSS is recommended. 
 
 ## Features
 
