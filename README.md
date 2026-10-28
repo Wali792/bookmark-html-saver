@@ -201,3 +201,7 @@ After loading the unpacked extension, test these cases in Chrome:
 ## License
 
 No license is included yet. Unless a license is added, this repository is not explicitly licensed for reuse. Choose and add a license before granting general permission to reuse or redistribute the code.
+
+## General
+
+If you have questions, comments, concerns, or suggestions, feel free to open an issue on the [Issues tab](https://github.com/Wali792/bookmark-html-saver/issues) or contact me via email.
